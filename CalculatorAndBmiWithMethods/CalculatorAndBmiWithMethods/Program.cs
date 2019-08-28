@@ -24,6 +24,21 @@ namespace CalculatorAndBmiWithMethods
                 double sum = calculations.Addition(value1, value2);
                 Console.WriteLine("The Answer is: " + sum);
 
+                ;
+
+                switch (Operations)
+                {
+                    case "+":
+                         sum = calculations.Addition(value1, value2);
+                        break;
+                    case "-":
+                        sum = calculations.Subtraction(value1, value2);
+                        break;
+                    case "*":
+                        sum = calculations.multiplication(value1, value2);
+                        break;
+
+                }
 
 
             }
