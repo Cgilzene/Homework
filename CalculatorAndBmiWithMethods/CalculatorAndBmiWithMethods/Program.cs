@@ -11,9 +11,9 @@ namespace CalculatorAndBmiWithMethods
         static void Main(string[] args)
         {
             Console.WriteLine("Please Select 1 for Calculator or 2 for BMI Calculator");
-            int option1 = int.Parse(Console.ReadLine());
+            int option = int.Parse(Console.ReadLine());
 
-            if (option1 == 1)
+            if (option == 1)
             {
                 Calc calculations = new Calc();
 
@@ -55,7 +55,7 @@ namespace CalculatorAndBmiWithMethods
 
 
             }
-            else if (option1 == 2)
+            else if (option == 2)
             {
                 BMIcalc bmi = new BMIcalc();
 
@@ -108,10 +108,7 @@ namespace CalculatorAndBmiWithMethods
     {
         public double BMI(float weightInKg, float heightInCm)
         {
-           /* Console.WriteLine("Please enter your height in cm");
-             heightInCm = float.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter your weight in kg");
-             weightInKg = float.Parse(Console.ReadLine());*/
+           
             double BmiTotal = (weightInKg / (heightInCm * heightInCm)) * 10000; // bmi calculation = weight / height squared
 
             if (BmiTotal < 18.5)
