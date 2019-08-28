@@ -10,67 +10,71 @@ namespace CalculatorAndBmiWithMethods
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please Select 1 for Calculator or 2 for BMI Calculator");
-            int option = int.Parse(Console.ReadLine());
+            string exit = "exit";
+            //while (exit == "exit")
+            //{
+                Console.WriteLine("Please Select 1 for Calculator or 2 for BMI Calculator");
+                int option = int.Parse(Console.ReadLine());
 
-            if (option == 1)
-            {
-                Calc calculations = new Calc();
-
-                Console.WriteLine("Welcome To Calculator");
-
-                Console.WriteLine("Please enter the first number");
-
-                float value1 = float.Parse(Console.ReadLine());
-
-                Console.WriteLine("Please enter the second number");
-
-                float value2 = float.Parse(Console.ReadLine());
-
-                double sum;
-
-                Console.WriteLine("Enter the opperation, + , -, * , / " );
-
-                String Operations = Console.ReadLine();
-
-                switch (Operations)
+                if (option == 1)
                 {
-                    case "+":
-                         sum = calculations.Addition(value1, value2);
-                        Console.WriteLine("The Answer is: " + sum);
-                        break;
-                    case "-":
-                        sum = calculations.Subtraction(value1, value2);
-                        Console.WriteLine("The Answer is: " + sum);
-                        break;
-                    case "*":
-                        sum = calculations.multiplication(value1, value2);
-                        Console.WriteLine("The Answer is: " + sum);
-                        break;
-                    case "/":
-                        sum = calculations.Division(value1, value2);
-                        Console.WriteLine("The Answer is: " + sum);
-                        break;
+                    Calc calculations = new Calc();
+
+                    Console.WriteLine("Welcome To Calculator");
+
+                    Console.WriteLine("Please enter the first number");
+
+                    float value1 = float.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Please enter the second number");
+
+                    float value2 = float.Parse(Console.ReadLine());
+
+                    double sum;
+
+                    Console.WriteLine("Enter the opperation, + , -, * , / ");
+
+                    String Operations = Console.ReadLine();
+
+                    switch (Operations)
+                    {
+                        case "+":
+                            sum = calculations.Addition(value1, value2);
+                            Console.WriteLine("The Answer is: " + sum);
+                            break;
+                        case "-":
+                            sum = calculations.Subtraction(value1, value2);
+                            Console.WriteLine("The Answer is: " + sum);
+                            break;
+                        case "*":
+                            sum = calculations.multiplication(value1, value2);
+                            Console.WriteLine("The Answer is: " + sum);
+                            break;
+                        case "/":
+                            sum = calculations.Division(value1, value2);
+                            Console.WriteLine("The Answer is: " + sum);
+                            break;
+                    }
+
+
                 }
+                else if (option == 2)
+                {
+                    BMIcalc bmi = new BMIcalc();
 
+                    Console.WriteLine("Please enter your height in cm");
+                    float heightInCm = float.Parse(Console.ReadLine());
+                    Console.WriteLine("Please enter your weight in kg");
+                    float weightInKg = float.Parse(Console.ReadLine());
 
-            }
-            else if (option == 2)
-            {
-                BMIcalc bmi = new BMIcalc();
-
-                Console.WriteLine("Please enter your height in cm");
-                float heightInCm = float.Parse(Console.ReadLine());
-                Console.WriteLine("Please enter your weight in kg");
-                float weightInKg = float.Parse(Console.ReadLine());
-
-                bmi.BMI(weightInKg, heightInCm);
-            }
-            else
-            {
-                Console.WriteLine("please enter either 1 or 2");
-            }
-
+                    bmi.BMI(weightInKg, heightInCm);
+                }
+                else
+                {
+                    Console.WriteLine("please enter either 1 or 2");
+                }
+                //Console.Read();
+           // }
 
             Console.Read();
         }
