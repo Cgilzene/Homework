@@ -10,36 +10,42 @@ namespace CalculatorAndBmiWithMethods
     {
         static void Main(string[] args)
         {
-            string exit = "exit";
+            //string exit = "exit";
             //while (exit == "exit")
             //{
-                Console.WriteLine("Please Select 1 for Calculator or 2 for BMI Calculator");
-                int option = int.Parse(Console.ReadLine());
+            int option;
+            double sum;
+            float value1;
+            float value2;
+            String Operations;
+            Calc calculations = new Calc(); //creating an sinstance of the class calc
+
+            Console.WriteLine("Please Select 1 for Calculator or 2 for BMI Calculator");
+                 option = int.Parse(Console.ReadLine());
 
                 if (option == 1)
                 {
-                    Calc calculations = new Calc();
+                   
 
-                    Console.WriteLine("Welcome To Calculator");
-
+                    Console.WriteLine("Welcome To The Calculator");
                     Console.WriteLine("Please enter the first number");
 
-                    float value1 = float.Parse(Console.ReadLine());
+                    value1 = float.Parse(Console.ReadLine());
 
                     Console.WriteLine("Please enter the second number");
 
-                    float value2 = float.Parse(Console.ReadLine());
+                    value2 = float.Parse(Console.ReadLine());
 
-                    double sum;
+                    
 
                     Console.WriteLine("Enter the opperation, + , -, * , / ");
 
-                    String Operations = Console.ReadLine();
+                     Operations = Console.ReadLine();
 
                     switch (Operations)
                     {
                         case "+":
-                            sum = calculations.Addition(value1, value2);
+                            sum = calculations.Addition(value1, value2); //calling the addition method in the calc class
                             Console.WriteLine("The Answer is: " + sum);
                             break;
                         case "-":
@@ -149,8 +155,8 @@ namespace CalculatorAndBmiWithMethods
             {
                 Console.WriteLine("?");
             }
-
             Console.Read();
+
             return BmiTotal;
         }
 
