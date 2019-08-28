@@ -16,12 +16,19 @@ namespace CalculatorAndBmiWithMethods
             if (option1 == 1)
             {
                 Calc calculations = new Calc();
+
                 Console.WriteLine("Welcome To Calculator");
+
                 Console.WriteLine("Please enter the first number");
+
                 float value1 = float.Parse(Console.ReadLine());
+
                 Console.WriteLine("Please enter the second number");
+
                 float value2 = float.Parse(Console.ReadLine());
+
                 double sum;
+
                 Console.WriteLine("Enter the opperation, + , -, * , / " );
 
                 String Operations = Console.ReadLine();
@@ -50,11 +57,18 @@ namespace CalculatorAndBmiWithMethods
             }
             else if (option1 == 2)
             {
+                BMIcalc bmi = new BMIcalc();
 
+                Console.WriteLine("Please enter your height in cm");
+                float heightInCm = float.Parse(Console.ReadLine());
+                Console.WriteLine("Please enter your weight in kg");
+                float weightInKg = float.Parse(Console.ReadLine());
+
+                bmi.BMI(weightInKg, heightInCm);
             }
             else
             {
-
+                Console.WriteLine("please enter either 1 or 2");
             }
 
 
@@ -86,6 +100,57 @@ namespace CalculatorAndBmiWithMethods
             double sum = value1 / value2;
 
             return sum;
+        }
+
+        
+    }
+    class BMIcalc
+    {
+        public double BMI(float weightInKg, float heightInCm)
+        {
+           /* Console.WriteLine("Please enter your height in cm");
+             heightInCm = float.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter your weight in kg");
+             weightInKg = float.Parse(Console.ReadLine());*/
+            double BmiTotal = (weightInKg / (heightInCm * heightInCm)) * 10000; // bmi calculation = weight / height squared
+
+            if (BmiTotal < 18.5)
+            {
+                Console.WriteLine("Your BMI is: ");
+                Console.WriteLine(BmiTotal);
+                Console.WriteLine("You are underweight");
+            }
+            else if (BmiTotal >= 18.5 & BmiTotal <= 24.9)
+            {
+                Console.WriteLine("Your BMI is: ");
+                Console.WriteLine(BmiTotal);
+                Console.WriteLine("You are healthy");
+            }
+            else if (BmiTotal >= 25 & BmiTotal <= 29.9)
+            {
+                Console.WriteLine("Your BMI is: ");
+                Console.WriteLine(BmiTotal);
+                Console.WriteLine("You are overweight");
+            }
+            else if (BmiTotal >= 30 & BmiTotal <= 39.9)
+            {
+                Console.WriteLine("Your BMI is: ");
+                Console.WriteLine(BmiTotal);
+                Console.WriteLine("You are obease");
+            }
+            else if (BmiTotal >= 40)
+            {
+                Console.WriteLine("Your BMI is: ");
+                Console.WriteLine(BmiTotal);
+                Console.WriteLine("You are morbidly obease");
+            }
+            else
+            {
+                Console.WriteLine("?");
+            }
+
+            Console.Read();
+            return BmiTotal;
         }
 
     }
