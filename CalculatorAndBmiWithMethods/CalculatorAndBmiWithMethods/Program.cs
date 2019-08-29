@@ -18,7 +18,7 @@ namespace CalculatorAndBmiWithMethods
             float value1;
             float value2;
             String Operations;
-            Calc calculations = new Calc(); //creating an sinstance of the class calc
+            Calc calculations = new Calc(); //creating an object of the class calc
 
             Console.WriteLine("Please Select 1 for Calculator or 2 for BMI Calculator");
                  option = int.Parse(Console.ReadLine());
